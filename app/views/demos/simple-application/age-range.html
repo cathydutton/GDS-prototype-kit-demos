@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+{# 
+      <h1 class="govuk-heading-xl">
+         How old are you?
+      </h1> #}
+
+       {% include "../../includes/error-summary.html" %}
+
+      <form class="form"  method="post">
+
+        {{ govukRadios({
+          idPrefix: "ageRange",
+          name: "ageRange",
+          fieldset: {
+            legend: {
+              text: 'How old are you?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          errorMessage: errors.ageRange,   
+          items: [
+            {
+              value: "under 30",
+              text: "under 30"
+            },
+            {
+              value: "30 to 45",
+              text: "30 to 45"
+            },
+            {
+              value: "46 to 55",
+              text: "46 to 55"
+            },
+            {
+              value: "over 55",
+              text: "over 55"
+            }
+          ]
+        }) }}
+
+
+        <input class="govuk-button" type="submit" value="Continue">
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+   Licence conditions
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Licence conditions
+      </h1>
+      
+      {% include "../../includes/error-summary.html" %}
+
+      <p>When you buy this licence you agree that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>the licence will only be used by the person named on it</li>
+            <li>you will only use the licence while it is valid</li>
+        </ul>
+        <p><a href="/" class="govuk-link" title="exit service">I no longer want to buy a licence</a></p>
+
+      <form class="form"  method="post">
+
+      {{ govukCheckboxes({
+        idPrefix: "terms",
+        name: "terms",
+        fieldset: {
+          legend: {
+            text: '',
+            classes: 'govuk-fieldset__legend--xl'
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "accept",
+            text: "I agree to the terms and conditions"
+          }
+        ]
+      }) }}
+
+
+        <input class="govuk-button" type="submit" value="Continue">
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

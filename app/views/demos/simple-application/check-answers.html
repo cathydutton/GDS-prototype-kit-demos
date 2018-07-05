@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your answers before sending your application
+      </h1>
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="govuk-heading-m">
+        Personal details
+      </h2>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `app-check-your-answers--short` for short questions -->
+      <!--   * `app-check-your-answers__questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+             {% if firstName %} {{firstName}} {{lastName}} {% else %} Not supplied {% endif %}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="name?returnUrl=/check-answers">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Age range
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% if ageRange %} {{ageRange}} {% else %} Not supplied {% endif %}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="age-range?returnUrl=/check-answers">
+              Change<span class="govuk-visually-hidden"> age range</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+           Travel
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% if travel %} {{travel}} {% else %} Not supplied {% endif %}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="travel?returnUrl=/check-answers">
+              Change<span class="govuk-visually-hidden"> travel</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <a href="terms" class="govuk-button" role="button">Accept and send application</a>
+
+    </div>
+  </div>
+{% endblock %}

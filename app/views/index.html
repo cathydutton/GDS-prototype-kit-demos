@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Base GOV.UK Prototype 
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Base GOV.UK Prototype 
+      </h1>
+     
+
+      <h2 class="govuk-heading-m">Journeys</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="demos/simple-application/start" title="Basic application">Basic application</a></li>
+        <li><a href="demos/branching/tea" title="Branching">Branching</a></li>
+        <li><a href="demos/age-check/date-of-birth" title="Age check">Age check</a></li>
+        <li><a href="demos/contact-details/contact-details" title="Contact details">Contact details</a></li>
+        <li><a href="demos/expiry-date/licence-length" title="expiry-date">Permit expiry date</a></li>
+        {# <li><a href="#" title="#">Progresive reveal input</a></li> #}
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        Pages
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="demos/simple-application/start" title="Start page">Start page</a></li>
+        <li><a href="demos/simple-application/name" title="Input fields">Input fields</a></li>
+        <li><a href="demos/simple-application/age-range" title="Radio buttons">Radio buttons</a></li>
+        <li><a href="demos/simple-application/travel" title="Select list">Select list</a></li>
+        <li><a href="demos/simple-application/check-answers" title="heck answers pag">Check answers page</a></li>
+        <li><a href="demos/simple-application/terms" title="Check boxes">Check boxes</a></li>
+        <li><a href="demos/simple-application/complete" title="Confirmation pag">Confirmation page</a></li>
+      </ul>
+    </div>
+</div>
+
+{% endblock %}

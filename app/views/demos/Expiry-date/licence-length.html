@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ What is your date of birth?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {# <h1 class="govuk-heading-xl">
+        Heading or question goes here
+      </h1> #}
+
+    {% include "../../includes/error-summary.html" %}
+
+     <form class="form"  method="post">
+
+        {{ govukRadios({
+          idPrefix: "licenceLength",
+          name: "licenceLength",
+          fieldset: {
+            legend: {
+              text: 'Select licence length',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          errorMessage: errors.licenceLength,   
+          items: [
+            {
+              value: "12 months",
+              text: "12 months"
+            },
+            {
+              value: "8 days",
+              text: "8 days"
+            },
+            {
+              value: "1 day",
+              text: "1 day"
+            }
+          ]
+        }) }}
+
+
+        <input class="govuk-button" type="submit" value="Continue">
+
+      </form>
+
+
+    </div>
+  </div>
+{% endblock %}

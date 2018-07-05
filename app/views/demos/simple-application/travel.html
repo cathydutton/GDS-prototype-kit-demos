@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Heading or question goes here
+      </h1>
+
+
+      {% include "../../includes/error-summary.html" %}
+
+      <form class="form"  method="post">
+      
+      {{ govukSelect({
+        id: "travel",
+        name: "travel",
+        errorMessage: errors.travel,
+        label: {
+          text: "Select mode of transport"
+        },
+        items: [
+          {
+            value: '',
+            text: "Please select"
+          },
+          {
+            value: 'Car',
+            text: "Car"
+          },
+          {
+            value: 'Bike',
+            text: "Bike"
+          },
+          {
+            value: 'Bus',
+            text: " Bus"
+          },
+          {
+            value: 'Other',
+            text: "Other"
+          }
+        ]
+      }) }}
+
+
+        <input class="govuk-button" type="submit" value="Continue">
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
