@@ -29,7 +29,7 @@ module.exports = function (router, myPath) {
     }
     
     req.session.age = age
-    console.log(age);
+    // console.log(age);
 
     if (req.session.age < 16) {
       return res.redirect('under-16')
