@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ What is your date of birth?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "javascript: window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+   <nav class="navigation-secondary">
+    <ul>
+      <li>
+        <a href="#" class="active" aria-current="section">Active link</a>
+      </li>
+      <li>
+        <a href="#">Inactive link</a>
+      </li>
+      <li>
+        <a href="#">Another link</a>
+      </li>
+    </ul>
+  </nav>
+
+   
+
+    </div>
+  </div>
+{% endblock %}

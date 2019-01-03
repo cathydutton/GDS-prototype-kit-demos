@@ -21,5 +21,6 @@ require('./demos/branching')(router);
 require('./demos/age-check')(router);
 require('./demos/contact-details')(router);
 require('./demos/expiry-date')(router);
+require('./demos/dashboard')(router);
 
 module.exports = router
